@@ -1,1 +1,66 @@
+---
+title: CTF TRICKS WEB EXPLOITATION
+date: 2023-05-02 11:54:40 +/-TTTT
+categories: [ctf, education]
+tags: [learning]     # TAG names should always be lowercase
+---
 
+Situs web di seluruh dunia diprogram menggunakan berbagai bahasa pemrograman. Meskipun ada kerentanan khusus dalam setiap bahasa pemrograman yang harus diperhatikan oleh pengembang, ada masalah mendasar pada internet yang dapat muncul terlepas dari bahasa atau kerangka kerja yang dipilih.
+
+Kerentanan ini sering muncul di CTFs sebagai tantangan keamanan web di mana pengguna perlu mengeksploitasi bug untuk mendapatkan hak istimewa tingkat yang lebih tinggi.
+
+Kerentanan umum yang terlihat dalam tantangan CTF:
+
+* Sql Injection
+```
+SELECT * NULL,NULL FROM NULL-- -
+```
+* Command Injection
+```
+?cmd={payload}
+```
+* Lokal File Inclusion
+```
+?page=../../../etc/passwd
+```
+* Cross Site Scripting (XSS)
+```js
+<script>alert(1)</script>
+```
+* GraphSql
+```
+?query={__schema}
+```
+* Remote Code Execution (RCE)
+```php
+<?php system($_GET['cmd']);?>
+```
+
+
+Ada sedikit Cheetsheet yang bisa membantu anda dalam proses belajar  
+
+```
+Overview WEB EXPLOITATION :
+```
+
+* Checking cookies content
+* Different HTTP methods
+* Modifying cookies
+* Inspection of the website HTML/CSS/JS file
+* Ctrl + F with the flag format
+* bruteforce with the normal admin:admin
+* The poor cookie admin authentication
+* md5 checks
+* Blind SQL Injection
+* SQL Injection
+* SQL Injection filters bypass
+* SQL database server access and querying
+* flag can be scattered in the client side
+* JS obfuscation
+* WebAssembly
+* Checking out robots.txt/.htaccess/.DS_Store
+* file trace by looking through static imports(html,css,js,imgs)
+* HTTP Headers(User-Agent,Accept-Language,referer,Date,DNT,X-Forwarded-For,etc…)
+* Any sus long string can be base64(may need to respect its multi-line)
+* Command Injection(system command)(don’t forget to URL encode specializes)
+* Command Injection(language command - php, node, python etc.. -)
