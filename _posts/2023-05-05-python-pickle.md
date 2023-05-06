@@ -2,7 +2,7 @@
 title: PICKLE RCE
 date: 2023-05-05 02:35:40 +/-TTTT
 categories: [learning, web]
-tags: [learning]     # TAG names should always be lowercase
+tags: [ctf]     # TAG names should always be lowercase
 ---
 
 The python “pickle” module, that serializes and deserializes a Python object, is vulnerable to remote code execution. If the website uses this module, we may be able to execute arbitrary code.
