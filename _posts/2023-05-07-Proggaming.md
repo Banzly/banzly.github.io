@@ -1,7 +1,7 @@
 ---
 title: PROGRAMMING 
-date: 2023-05-06 01:30:40 +/-TTTT
-categories: [learning, rev]
+date: 2023-05-07 00:30:40 +/-TTTT
+categories: [learning, programming]
 tags: [learning]     # TAG names should always be lowercase
 ---
 
