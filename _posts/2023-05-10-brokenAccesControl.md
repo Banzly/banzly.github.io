@@ -1,6 +1,6 @@
 ---
 title: BROKEN ACCESS CONTROL
-date: 2023-05-10 23:40:20 +/-TTTT
+date: 2023-05-10 23:50:20 +/-TTTT
 categories: [learning, web]
 tags: [ctf]     # TAG names should always be lowercase
 ---
