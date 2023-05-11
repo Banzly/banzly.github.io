@@ -1,6 +1,6 @@
 ---
 title: CTF WRITEUP
-date: 2023-05-12 02:04:40 +/-TTTT
+date: 2023-05-12 02:16:40 +/-TTTT
 categories: [ctf, learning]
 tags: [ctf]     # TAG names should always be lowercase
 ---
@@ -68,13 +68,13 @@ Thanks to the source code provided, we can see that the input is passed into the
 
 Let’s break it down!
 
-When input POST parameter is provided, it’ll check the input contains ; OR | character via regular expression (regex). If no input parameter is provided or it contains ; OR |, default value will be /home/.
+When input POST parameter is provided, it’ll check the input contains `; OR | `character via regular expression (regex). If no input parameter is provided or it contains `; OR |`, default value will be `/home/`.
 
-Finally, it’ll parse our input to a shell_exec() function, which will execute shell command!
+Finally, it’ll parse our input to a `shell_exec()` function, which will execute shell command!
 
 Nice, we found a sink (Dangerous function)!
 
-Let’s look at the shell_exec() function :
+Let’s look at the `shell_exec()` function:
 
 ```php
 <?= shell_exec('ls '.$parsed); ?>
@@ -253,4 +253,9 @@ We can modify the request to take advantage of this typo by sending:
         "lenght": "; cat /app/flag.txt"
     }
 }
+```
+
+# Flag
+```
+PWNME{E4Sy_P34sI_B4CkdO0R}\n
 ```
