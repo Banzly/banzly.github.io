@@ -1,7 +1,7 @@
 ---
 title: PYTHON 
-date: 2023-05-19 11:12:40 +/-TTTT
-categories: [learning, programming]
+date: 2023-05-19 11:20:40 +/-TTTT
+categories: [learning, Python]
 tags: [learning]     # TAG names should always be lowercase
 ---
 
