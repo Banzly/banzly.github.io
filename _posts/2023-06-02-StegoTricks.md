@@ -1,7 +1,7 @@
 ---
 title: STEGOTRICKS
-date: 2023-06-02 20:56:40 +/-TTTT
-categories: [ctf, STEGOTRICKS]
+date: 2023-06-02 21:02:40 +/-TTTT
+categories: [learning, STEGOTRICKS]
 tags: [ctf]     # TAG names should always be lowercase
 ---
 
