@@ -388,4 +388,4 @@ Bitwise operators are used to compare (binary) numbers :
 | <<       | Zero fill left shift  | Shift left by pushing zeros in from the right and let the leftmost bits fall off   | x << 2    |
 | >>       | Signed right shift   | Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off   | x >> 2    |
 
-that's all, maybe later I will update about learning basic python. thanks for reading
+that's all, maybe later I will update about learning basic python. thanks for reading.

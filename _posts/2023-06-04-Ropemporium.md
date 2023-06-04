@@ -414,7 +414,7 @@ get_args = pop_rdi_rsi_rdx_ret_address + arg0 + arg1 + arg2
 
 # SCRIPT 
 
-```PYTHON
+```py
 from pwn import *
 
 elf = ELF('callme')                             #context.binary
