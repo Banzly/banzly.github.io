@@ -3,6 +3,13 @@
 icon: fas fa-info-circle
 order: 4
 ---
+```
+  ____                    _   _____
+ | __ )    __ _   _ __   ( ) |__  /
+ |  _ \   / _` | | '_ \  |/    / / 
+ | |_) | | (_| | | | | |      / /_ 
+ |____/   \__,_| |_| |_|     /____|
+```                                   
 
 My name is  BanZ. I am a student who is passionate about technology and loves to explore new things. My main activity is playing CTF (Capture the Flag) and programming.
 
