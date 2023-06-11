@@ -37,44 +37,18 @@ This rule applies to variable names or other functions.
 
 # Python comments
 
-`Comments` are code in Python scripts that are not executed or not run by the machine. Comments are only used to mark or provide written information on the script.
+`Python comments` are lines of text that are ignored by the interpreter during program execution. They are used to provide explanatory or descriptive information about the code to make it more readable and understandable for other programmers or even for yourself when revisiting the code later.
 
-Comments are commonly used to let others understand what the script is doing. or to remind the programmer himself if one day he returns to edit the script.
-
-To use your comment simply write a hash sign `#` followed by your comment or by using a string literal that opens and closes with """.
+In Python, comments start with the hash `#` symbol and continue until the end of the line. Here's an example:
 
 Below is an example of using comments in Python.
 
 ```python
-# Ini adalah komentar
+# This is a comment.
+# It provides additional information about the code.
 
-# Tulisan ini tidak akan dieksekusi
-
-#komentar dengan tanda pagar hanya bisa digunakan
-#untuk
-#satu
-#baris
-
-"""
-Penulisan Komentar lebih dari satu baris yaitu
-dengan menggunakan kutip dua 3 kali dan
-ditutup dengan kutip dua 3 kali juga
-"""
-
-print("Hello World") #ini juga komentar
-
-#print("Welcome")
-
-# komentar bisa berisi spesial karakter !@#$%^&\*(),./;'[]\
-
-#mencetak nama
-print("BanZ")
-
-#mencetak angka/integer
-print(123)
+print("Hello, World!")  # This line prints a greeting message.
 ```
-
-When you run the script above, you will see output in the form of `Hello World`, `BanZ` and `123`, because the posts/comments written are not executed.
 
 # Python Data Types
 
@@ -98,89 +72,114 @@ Following are the data types of the Python programming language :
 To try various data types, please try the `Python script` below.
 
 ```python
-#tipe data Boolean
-print(True)
+# Integer
+my_integer = 10
+print("Integer:", my_integer)
 
-#tipe data String
-print("Yok Belajar Python")
-print('Belajar Python Sangat Menyenangkan')
+# Float
+my_float = 3.14
+print("Float:", my_float)
 
-#tipe data Integer
-print(20)
+# String
+my_string = "Hello, World!"
+print("String:", my_string)
 
-#tipe data Float
-print(3.14)
+# Boolean
+my_boolean = True
+print("Boolean:", my_boolean)
 
-#tipe data Hexadecimal
-print(9a)
+# List
+my_list = [1, 2, 3, 4, 5]
+print("List:", my_list)
 
-#tipe data Complex
-print(5j)
+# Tuple
+my_tuple = (6, 7, 8, 9, 10)
+print("Tuple:", my_tuple)
 
-#tipe data List
-print([1,2,3,4,5])
-print(["satu", "dua", "tiga"])
+# Dictionary
+my_dictionary = {'name': 'BanZ', 'age': 20, 'country': 'USA'}
+print("Dictionary:", my_dictionary)
 
-#tipe data Tuple
-print((1,2,3,4,5))
-print(("satu", "dua", "tiga"))
+# Set
+my_set = {1, 2, 3, 4, 5}
+print("Set:", my_set)
 
-#tipe data Dictionary
-print({"nama":"Banz", 'umur':20})
-#tipe data Dictionary dimasukan ke dalam variabel biodata
-biodata = {"nama":"Banz", 'umur':21} #proses inisialisasi variabel biodata
-print(biodata) #proses pencetakan variabel biodata yang berisi tipe data Dictionary
-print(type(biodata)) #fungsi untuk mengecek jenis tipe data. akan tampil <class 'dict'> yang berarti dict adalah tipe data dictionary
+# None
+my_none = None
+print("None:", my_none)
 ```
 
 # Python variables
 
-`Variables` are memory locations that are reserved for storing values. This means that when you create a variable you reserve some space in memory. Variables store data that is carried out during program execution, which later the contents of these variables can be changed by certain operations on programs that use variables.
+In Python, variables are used to store and manipulate data. A variable is a name that represents a value or an object in memory. It allows you to assign a value to a name, which can then be used throughout your program.
 
-Variables can store various types of data. In Python programming, variables have dynamic properties, meaning that Python variables do not need to be declared with certain data types and Python variables can be changed when the program is run.
+Here's an explanation of variables with an example:
 
-Writing Python variables itself also has certain rules, namely:
-
-* The first character must be a letter or an underscore `_`
-* The next character can be a letter, underscore `_` or number
-* Characters in variable names are case-sensitive. This means that lowercase and uppercase letters are distinguished. For example, the variables `namaDepan` and `namadepan` are different variables.
-
-To start creating variables in Python it's very easy, you simply write down the variable and then fill it with a value by adding an equals sign followed `=` by the value you want to enter.
-
-Below is an example of using variables in the Python programming language
+Variable Declaration and Assignment:
+You can declare a variable by giving it a name and assigning a value to it using the assignment operator (=). The value can be of any data type.
 
 ```python
-#proses memasukan data ke dalam variabel
-nama = "Arz BanZ"
-#proses mencetak variabel
-print(nama)
-
-#nilai dan tipe data dalam variabel dapat diubah
-umur = 20 #nilai awal
-print(umur) #mencetak nilai umur
-type(umur) #mengecek tipe data umur
-umur = "dua puluh satu" #nilai setelah diubah
-print(umur) #mencetak nilai umur
-type(umur) #mengecek tipe data umur
-
-namaDepan = "Er"
-namaBelakang = "BanZ"
-nama = namaDepan + " " + namaBelakang
-umur = 22
-hobi = "Computer"
-print("Biodata\n", nama, "\n", umur, "\n", hobi)
-
-#contoh variabel lainya
-inivariabel = "Halo"
-ini_juga_variabel = "Hai"
-\_inivariabeljuga = "Hi"
-inivariabel222 = "Bye"
-
-panjang = 10
-lebar = 5
-luas = panjang \* lebar
-print(luas)
+# Variable declaration and assignment
+x = 5
+name = "John"
+is_true = True
 ```
+
+Variable Naming Rules :
+
+`Variable names` must start with a letter or an underscore.
+They can contain letters, digits, and underscores.
+Variable names are case-sensitive, so age and Age are different variables.
+
+```python
+_count = 10
+name1 = "Alice"
+my_variable = 3.14
+
+```
+Variable Reassignment :
+
+You can change the value of a variable by assigning a new value to it.
+
+```python
+x = 5
+x = 10  # Reassigning x to a new value
+```
+Using Variables in Expressions :
+
+Variables can be used in mathematical or logical expressions.
+
+```python
+x = 5
+y = 3
+sum = x + y
+print(sum)  # Output: 8
+```
+
+Dynamic Typing :
+
+Python is a dynamically typed language, meaning you don't need to explicitly declare the data type of a variable. The interpreter infers the type based on the assigned value.
+
+```python
+x = 5      # x is an integer
+x = "Hello"  # x is now a string
+```
+
+Variable Scope :
+
+Variables have a scope, which determines where they can be accessed. Variables defined inside a function have local scope and are only accessible within that function. Variables defined outside any function have global scope and can be accessed throughout the program.
+
+```python
+x = 10  # Global variable
+
+def my_function():
+    y = 5  # Local variable
+    print(x + y)  # Accessing global and local variables
+
+my_function()  # Output: 15
+```
+
+Variables are fundamental for storing and manipulating data in Python. They allow you to work with different types of information, perform calculations, and track state in your programs.
 
 # Python operators
 
@@ -205,48 +204,37 @@ The Python programming language supports various operators, including :
 Below is an example of using `Arithmetic Operators` in the Python programming language.
 
 ```python
-#OPERATOR ARITMATIKA
+# Arithmetic Operators Example
 
-#Penjumlahan
-print(13 + 2)
-mangga = 7
-apel = 9
-buah = mangga + apel #
-print(buah)
+# Addition
+num1 = 10
+num2 = 5
+sum = num1 + num2
+print("Addition:", sum)  # Output: 15
 
-#Pengurangan
-hutang = 80000
-bayar = 5000
-sisaHutang = hutang - bayar
-print("Sisa hutang Anda adalah ", sisaHutang)
+# Subtraction
+difference = num1 - num2
+print("Subtraction:", difference)  # Output: 5
 
-#Perkalian
-panjang = 20
-lebar = 8
-luas = panjang * lebar
-print(luas)
+# Multiplication
+product = num1 * num2
+print("Multiplication:", product)  # Output: 50
 
-#Pembagian
-roti = 16
-orang = 4
-kuePerAnak = Roti / orang
-print("Setiap orang akan mendapatkan bagian roti sebanyak ", rotiPerorang)
+# Division
+quotient = num1 / num2
+print("Division:", quotient)  # Output: 2.0
 
-#Sisa Bagi / Modulus
-bilangan1 = 15
-bilangan2 = 5
-hasil = bilangan1 % bilangan2
-print("Sisa bagi dari bilangan ", bilangan1, " dan ", bilangan2, " adalah ", hasil)
+# Floor Division
+floor_division = num1 // num2
+print("Floor Division:", floor_division)  # Output: 2
 
-#Pangkat
-bilangan3 = 8
-bilangan4 = 2
-hasilPangkat = bilangan3 ** bilangan4
-print(hasilPangkat)
+# Modulo
+remainder = num1 % num2
+print("Modulo:", remainder)  # Output: 0
 
-#Pembagian Bulat
-print(10//3)
-#10 dibagi 3 adalah 3.3333. Karena dibulatkan maka akan menghasilkan nilai 3
+# Exponentiation
+power = num1 ** num2
+print("Exponentiation:", power)  # Output: 100000
 ```
 
 * `Comparison Operators`
@@ -263,28 +251,30 @@ Comparison operators are used to compare a value of each operand.
 | Greater or equal to    | 5 >= 3        | Evaluates to True if the value of the left operand is greater than or equal to the value of the right operand |
 | Less or equal to       | 5 <= 3        | Evaluates to True if the value of the left operand is less than or equal to the value of the right operand    |
 
-Below is an example of using Arithmetic Operators in the Python programming language
+Below is an example of using comparation Operators in the Python programming language
 
 ```python
-# SAMA DENGAN
-print(1 == 1) # Hasilnya akan bernilai True karena satu sama dengan satu
-print(1 == 2) # Hasilnya akan bernilai False karena satu tidak sama dengan dua
+# Comparison Operators Example
 
-# TIDAK SAMA DENGAN
-print(2 != 2) # Hasilnya akan bernilai False karena dua seharusnya sama dengan dua
-print(2 != 3) # Hasilnya akan bernilai True karena dua tidak sama dengan tiga
+# Equal to
+num1 = 10
+num2 = 5
+print("Equal to:", num1 == num2)  # Output: False
 
-# LEBIH BESAR DARI
-print(5 > 3) # Hasilnya akan bernilai True karena lima lebih besar dari tiga
+# Not equal to
+print("Not equal to:", num1 != num2)  # Output: True
 
-# LEBIH KECIL DARI
-print(5 < 3) # Hasilnya akan bernilai False karena lima tidak lebih besar dari tiga
+# Greater than
+print("Greater than:", num1 > num2)  # Output: True
 
-# LEBIH BESAR DARI SAMA DENGAN
-print(5 >= 3) # Hasilnya akan bernilai True karena lima lebih besar dari sama dengan tiga
+# Less than
+print("Less than:", num1 < num2)  # Output: False
 
-# LEBIH KECIL DARI SAMA DENGAN
-print(5 <= 3) # Hasilnya akan bernilai False karena lima tidak lebih besar dari sama dengan tiga
+# Greater than or equal to
+print("Greater than or equal to:", num1 >= num2)  # Output: True
+
+# Less than or equal to
+print("Less than or equal to:", num1 <= num2)  # Output: False
 ```
 
 * `Assignment Operators`
@@ -336,20 +326,19 @@ If the condition evaluates to false Falsethen the statement/condition ifwill not
 Below is an example of using the if condition in Python
 
 ```python
-#Kondisi if adalah kondisi yang akan dieksekusi oleh program jika bernilai benar atau TRUE
+# If Condition Example
 
-nilai = 9
+# Define a variable
+num = 10
 
-#jika kondisi benar/TRUE maka program akan mengeksekusi perintah dibawahnya
-if(nilai > 8):
-    print("Sembilan Lebih Besar Dari Angka 8") # Kondisi Benar, Dieksekusi
+# Check if the number is positive
+if num > 0:
+    print("The number is positive.")
 
-#jika kondisi salah/FALSE maka program tidak akan mengeksekusi perintah dibawahnya
-if(nilai > 20):
-    print("Sembilan Lebih Besar Dari Angka Duapuluh") # Kondisi Salah, Maka tidak tereksekusi
+# Check if the number is even
+if num % 2 == 0:
+    print("The number is even.")
 ```
-
-From the example above, if the program is run it will print the string `Sembilan Lebih Besar Dari Angka Tujuh` once, namely in the first if. In both if statements evaluate to false, so the command `print("Sembilan Lebih Besar Dari Angka Sepuluh")` will not be executed.
 
 * `If-Else condition`
 
@@ -362,18 +351,17 @@ The if else condition is a condition where if the statement is true `True` then 
 Below is an example of using the if else condition in Python
 
 ```python
-#Kondisi if else adalah jika kondisi bernilai TRUE maka akan dieksekusi pada if, tetapi jika bernilai FALSE maka akan dieksekusi kode pada else
+# If-Else Condition Example
 
-nilai = 3
-#Jika pernyataan pada if bernilai TRUE maka if akan dieksekusi, tetapi jika FALSE kode pada else yang akan dieksekusi.
-if(nilai > 7):
-    print("Selamat Anda Lulus")
+# Define a variable
+num = 10
+
+# Check if the number is positive
+if num > 0:
+    print("The number is positive.")
 else:
-    print("Maaf Anda Tidak Lulus")
+    print("The number is not positive.")
 ```
-
-In the example above, if the program is run it will print a string `Maaf Anda Tidak Lulus` because the if statement is valuableFalse
-
 * `Elif condition`
 
 Decision making (if elif condition) is a logical continuation/branching of the `if condition`. With elif we can create program code that will select several possibilities that can occur. Almost the same as the `else` condition, the difference between the `elif` conditions can be many and not just one.
@@ -381,27 +369,27 @@ Decision making (if elif condition) is a logical continuation/branching of the `
 Below is an example of using the elif condition in Python
 
 ```python
-#Contoh penggunaan kondisi elif
+# Elif Condition Example
 
-day = "Minggu"
+# Define a variable
+score = 85
 
-if(day == "Senin"):
-    print("Saya akan kuliah")
-elif(day == "Selasa"):
-    print("Saya akan kuliah")
-elif(day == "Rabu"):
-    print("Saya akan kuliah")
-elif(day == "Kamis"):
-    print("Saya akan kuliah")
-elif(day == "Jumat"):
-    print("Saya akan kuliah")
-elif(day == "Sabtu"):
-    print("Saya akan kuliah")
-elif(day == "Minggu"):
-    print("Saya akan libur")
+# Determine the grade based on the score
+if score >= 90:
+    grade = "A"
+elif score >= 80:
+    grade = "B"
+elif score >= 70:
+    grade = "C"
+elif score >= 60:
+    grade = "D"
+else:
+    grade = "F"
+
+# Print the grade
+print("Grade:", grade)
+
 ```
-
-In the example above, if the program is run it will print the string `Saya akan libur`.
 
 # Loop Python
 
@@ -422,15 +410,21 @@ While loop repetition in the Python programming language statement is executed m
 Below is an example of using the While Loop loop.
 
 ```python
-#Contoh penggunaan While Loop
-#Catatan: Penentuan ruang lingkup di Python bisa menggunakan tab alih-alih menggunakan tanda kurung
+# While Loop Example
 
-count = 0
-while (count < 9):
-  print ("The count is: ", count)
-  count = count + 1
+# Countdown from 5 to 1
+count = 5
+while count >= 1:
+    print(count)
+    count -= 1
 
-print ("Good bye!")
+# Sum of numbers from 1 to 5
+sum = 0
+num = 1
+while num <= 5:
+    sum += num
+    num += 1
+print("Sum:", sum)
 ```
 
 <-> `For Loop` <->
@@ -440,15 +434,21 @@ Looping `for` in Python has the ability to iterate over items of any order, such
 Below is an example of using a For Loop.
 
 ```python
-#Contoh pengulangan for sederhana
-angka = [1,2,3,4,5]
-for x in angka:
-  print(x)
+# For Loop Example
 
-#Contoh pengulangan for
-buah = ["mangga", "apel", "jeruk"]
-for makanan in buah:
-  print ("Saya suka makan", makanan)
+# Iterate over a list
+fruits = ["apple", "banana", "orange", "grape"]
+for fruit in fruits:
+    print(fruit)
+
+# Iterate over a string
+message = "Hello, World!"
+for char in message:
+    print(char)
+
+# Iterate using range()
+for num in range(1, 5):
+    print(num)
 ```
 
 <-> `Nested Loop` <->
@@ -458,19 +458,14 @@ The Python programming language allows the use of one loop inside another loop. 
 Below is an example of using a Nested Loop.
 
 ```python
-#Contoh penggunaan Nested Loop
-#Catatan: Penggunaan modulo pada kondisional mengasumsikan nilai selain nol sebagai True(benar) dan nol sebagai False(salah)
+# Nested Loop Example
 
-i = 2
-while(i < 100):
-  j = 2
-while(j <= (i/j)):
-  if not(i%j): break
-  j = j + 1
-  if (j > i/j) : print(i, " is prime")
-    i = i + 1
+# Outer loop
+for i in range(1, 4):
+    # Inner loop
+    for j in range(1, 4):
+        print(i, j)
 
-print("Good bye!")
 ```
 
 # Number Python
@@ -598,14 +593,37 @@ To access substrings, use square brackets to slice along with an index or index 
 As an example :
 
 ```python
-name = 'John Doe' message = "John Doe belajar bahasa python di Belajarpython"
-print ("name[0]: ", name[0])
-print ("message[1:4]: ", message[1:4])
+# Accessing Substrings Example
+
+# Define a string
+text = "Hello, World!"
+
+# Accessing a single character
+char = text[0]
+print("Single character:", char)  # Output: H
+
+# Accessing a substring
+substring = text[7:12]
+print("Substring:", substring)  # Output: World
+
+# Accessing a substring from a specific index to the end
+substring2 = text[7:]
+print("Substring to the end:", substring2)  # Output: World!
 ```
 
-When the above code is executed, it will produce the following results:
+In the above code, we have a string text containing the value `Hello, World!`. Here's how we access substrings using square brackets:
 
-`name[0]: J message[1:4]: ohn`
+Accessing a Single Character:
+We can access a single character in a string by specifying its index within square brackets. In the example, `text[0]` retrieves the character at index 0, which is `H`. The character is then assigned to the variable char and printed.
+
+Accessing a Substring:
+To access a substring, we use a slicing operation within the square brackets. In the example, `text[7:12]` retrieves the characters from index 7 to 11 (exclusive), resulting in the substring "World". The substring is assigned to the variable substring and printed.
+
+Accessing a Substring from a Specific Index to the End:
+If we omit the end index in the slicing operation, it defaults to the end of the string. In the example, `text[7:]` retrieves the characters starting from index 7 to the end of the string, resulting in the substring `World!`. The substring is assigned to the variable substring2 and printed.
+
+By using square brackets and providing appropriate indices or slicing operations, you can access specific characters or substrings within a string.
+
 
 * `Updating Strings
 
@@ -614,13 +632,19 @@ You can `update` an existing string by `(re)` assigning a variable to another st
 As an example : 
 
 ```python
-message = 'Hello World'
-print ("Updated String :- ", message[:6] + 'Python')
+# Updating an Existing String Example
+
+# Define an initial string
+greeting = "Hello"
+
+# Update the string by concatenating with another string
+greeting += ", World!"
+print("Updated String:", greeting)  # Output: Hello, World!
+
+# Update the string with a completely different value
+greeting = "Hi there!"
+print("Updated String:", greeting)  # Output: Hi there!
 ```
-
-When the above code is executed, it will produce the following results:
-
-`Updated String :- Hello Python`
 
 * `Escape Characters / Python Escape Characters`
 
@@ -758,10 +782,17 @@ Creating a list is very simple, just enter the various comma-separated values �
 Below is a simple example of creating a list in Python.
 
 ```python
-#Contoh sederhana pembuatan list pada bahasa pemrograman python
-list1 = ['kimia', 'fisika', 1993, 2017]
-list2 = [1, 2, 3, 4, 5 ]
-list3 = ["a", "b", "c", "d"]
+# Creating a List Example
+
+# Create an empty list
+empty_list = []
+
+# Create a list with values
+fruits = ["apple", "banana", "orange", "grape"]
+
+# Print the lists
+print("Empty List:", empty_list)
+print("Fruits List:", fruits)
 ```
 
 * `Access Values ​​in a Python List`
@@ -771,19 +802,21 @@ To access a value in a python list, use square brackets to slice along with the 
 Here is an example of how to access values ​​inside a python list :
 
 ```python
-#Cara mengakses nilai di dalam list Python
+# Accessing Values in a List Example
 
-list1 = ['fisika', 'kimia', 1993, 2017]
-list2 = [1, 2, 3, 4, 5, 6, 7 ]
+# Create a list of numbers
+numbers = [10, 20, 30, 40, 50]
 
-print ("list1[0]: ", list1[0])
-print ("list2[1:5]: ", list2[1:5])
-```
+# Accessing values by index
+print("First number:", numbers[0])  # Output: 10
+print("Third number:", numbers[2])  # Output: 30
 
-After you execute the above code, the result will be as below:
+# Accessing values using negative index
+print("Last number:", numbers[-1])  # Output: 50
+print("Second last number:", numbers[-2])  # Output: 40
 
-```
-list1[0]: fisika list2[1:5]: [2, 3, 4, 5]
+# Accessing values using slicing
+print("Slice of numbers:", numbers[1:4])  # Output: [20, 30, 40]
 ```
 
 * `Update Values ​​in a Python List`
@@ -793,11 +826,18 @@ You can update one or more values ​​in a list by providing a stub to the lef
 As an example :
 
 ```python
-list = ['fisika', 'kimia', 1993, 2017]
-print ("Nilai ada pada index 2 : ", list[2])
+# Updating and Adding Values in a List Example
 
-list[2] = 2001
-print ("Nilai baru ada pada index 2 : ", list[2])
+# Create a list of names
+names = ["Alice", "Bob", "Charlie", "Dave"]
+
+# Update a value in the list
+names[2] = "Charlie Brown"
+print("Updated List:", names)  # Output: ['Alice', 'Bob', 'Charlie Brown', 'Dave']
+
+# Add a value to the end of the list
+names.append("Eve")
+print("Updated List:", names)  # Output: ['Alice', 'Bob', 'Charlie Brown', 'Dave', 'Eve']
 ```
 
 * `Delete Values ​​in a Python List`
@@ -807,13 +847,22 @@ To remove values ​​inside a python list, you can use one of the del statemen
 As an example :
 
 ```py
-#Contoh cara menghapus nilai pada list python
+# Deleting Values in a List Example
 
-list = ['fisika', 'kimia', 1993, 2017]
+# Create a list of numbers
+numbers = [10, 20, 30, 40, 50]
 
-print (list)
-del list[2]
-print ("Setelah dihapus nilai pada index 2 : ", list)
+# Delete a value by index
+del numbers[2]
+print("Updated List:", numbers)  # Output: [10, 20, 40, 50]
+
+# Delete a value by value
+numbers.remove(20)
+print("Updated List:", numbers)  # Output: [10, 40, 50]
+
+# Delete multiple values by slicing
+del numbers[1:3]
+print("Updated List:", numbers)  # Output: [10, 50]
 ```
 
 <->`Basic Operations on Python Lists`<->

