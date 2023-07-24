@@ -45,7 +45,7 @@ social:
     - https://github.com/Banzly # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/robbani-ihya-ulhaq-0a1b37255/
+    # - https://www.linkedin.com/in/robbani-ihya-ulhaq-0a1b37255/
 
 google_site_verification: # fill in to your verification string
 
@@ -197,3 +197,5 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+top-title: Ban'Z
