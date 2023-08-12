@@ -1,7 +1,7 @@
 # The Site Configuration
 
 # Import the theme
-theme: jekyll-theme-chirpy
+# theme: jekyll-theme-chirpy
 
 # Change the following value to '/PROJECT_NAME' ONLY IF your site type is GitHub Pages Project sites
 # and doesn't have a custom domain.
@@ -23,7 +23,7 @@ title: Ban'Z # the main title
 tagline: This My Web And Notes # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-   This My Web And Notes
+   This My Notes
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://banzly.github.io"
