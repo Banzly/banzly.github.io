@@ -158,7 +158,7 @@ defaults:
       layout: page
       permalink: /:title/
   - scope:
-      path: assets/images
+      path: assets/images/img.jpg
     values:
       swcache: true
   - scope:
@@ -198,4 +198,5 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-top-title: Ban'Z
+plugins:
+  - jemoji
