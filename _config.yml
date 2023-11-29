@@ -18,7 +18,7 @@ timezone: Asia/Jakarta
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Ban'Z # the main title
+title: K0R3K # the main title
 
 tagline: This My Web And Notes # it will display as the sub-title
 
@@ -80,7 +80,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://i.pinimg.com/564x/fb/53/73/fb537375ce59dadaa38468370b0a0d9d.jpg
+avatar: "/assets/images/img.jpg"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
