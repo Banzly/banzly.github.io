@@ -20,7 +20,7 @@ timezone: Asia/Jakarta
 
 title: K0R3K # the main title
 
-tagline: This My Web And Notes # it will display as the sub-title
+tagline:  My Web And Notes # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
    This My Notes
@@ -37,7 +37,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: BanZ
+  name: Ban'Z
   email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
