@@ -11,20 +11,16 @@ order: 4
  |____/   \__,_| |_| |_|     /____|
 ```                                   
 
-My name is  BanZ. I am a student who is passionate about technology and loves to explore new things. My main activity is playing CTF (Capture the Flag) and programming.
+My name is BanZ. I am a college student who is passionate about technology and likes to explore new things. My main activities are playing Machine and programming.
 
-In playing CTF, I enjoy taking on various digital security challenges, such as cryptography, reverse engineering, and web security. I enjoy the process of problem solving and developing skills in understanding and solving complex challenges.
+Long story short in 2022 I reflected on myself. how can I protect others, if I can't protect myself. That's when I started learning Cyber Security, then I tried to join the community on my campus. honestly, at the time of the competition to enter the community I took 3 days because I didn't have basic coding or anything. and I asked my friends how this concept was done? there was no answer from them, I stopped asking and studied for 7 months. At one time I applied for an internship at an instantasi, I wanted to be like them,. in 2023 I was notified by someone to continue the test, at the time of the test I only surrendered to God. According to my intention in the learning process. 
 
-Apart from playing CTF, I also have a passion for programming. I love developing applications and websites, using various programming languages such as Python, JavaScript, and C++. I am always eager to learn about the latest technologies and deepen my knowledge in software development.
+God, listen to my prayer.
+The acceptance of myself in an instant is a process where prayer and effort during that time, it is not easy for me to go through this process by myself.  I want to give my best to someone who has trusted me during my time here, Thank you to Lead, HR and my seniors who have given me a lot of experience. 
 
-I have a passionate and dedicated personality in my work. I like to find creative solutions to complex problems and strive to continuously improve my skills in technology. I also enjoy collaborating with others and learning from them.
+One of my promises to God, I want to help people if I can with the knowledge that I understand and can be useful to others.
 
-In terms of education, I have taken several courses and trainings related to cybersecurity and programming. I always try to stay up to date with the latest developments in the technology industry and participate in relevant communities.
-
-Professionally, I look forward to continuing to develop my skills in cybersecurity and programming. I want to contribute to challenging and innovative projects, and continue to pursue new knowledge in the world of technology.
-
-That's a little description of myself professionally. I look forward to continuing to grow and contribute to the industry I love.
-
+🙂🙂🙂
 ```py
 print('About Me')
 ```
